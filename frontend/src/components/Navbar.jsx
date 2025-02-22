@@ -33,7 +33,51 @@ const Navbar = () => {
             Home
           </NavLink>
         </li>
-        
+        <li>
+        {
+          isUserSignedIn && (
+            <NavLink
+            to="/dashboard"
+            className={({ isActive }) =>
+              isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400" : "hover:bg-teal-500 px-2 py-1 rounded"
+            }>
+              Dashboard
+            </NavLink>
+          )
+        }</li>
+        <li>{
+          isUserSignedIn && (
+            <NavLink
+            to="/dashboard2"
+            className={({ isActive }) =>
+              isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400" : "hover:bg-teal-500 px-2 py-1 rounded"
+            }>
+              Dashboard2
+            </NavLink>
+          )
+        }</li>
+        <li>{
+          isUserSignedIn && (
+            <NavLink
+            to="/mycrops"
+            className={({ isActive }) =>
+              isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400" : "hover:bg-teal-500 px-2 py-1 rounded"
+            }>
+              My Crops
+            </NavLink>
+          )
+        }</li>
+        <li>{
+          isUserSignedIn && (
+            <NavLink
+            to="/finance"
+            className={({ isActive }) =>
+              isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400" : "hover:bg-teal-500 px-2 py-1 rounded"
+            }>
+              Finance
+            </NavLink>
+          )
+        }</li>
         {!isUserSignedIn ? (
           <li>
             <NavLink

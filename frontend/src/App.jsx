@@ -10,6 +10,12 @@ import Default from "./pages/Default";
 import Forgot from "./pages/Forgot";
 import EmailVerificationPage from "./pages/EmailVerificationPage";
 import ResetPassword from "./pages/ResetPassword";
+import Dashboard from "./pages/Dashboard";
+import Dashboard2 from "./pages/Dashboard2";
+import MyCrops from "./pages/MyCrops";
+import Footer from "./components/Footer";
+import TwitterPlaceholder from "./components/Twitter";
+import FinancialManagement from "./pages/Finance";
 
 function App() {
  
@@ -25,14 +31,36 @@ function App() {
         <Route path="/signup" element={<RegisterPage />} />
         <Route path="/verify-email" element={<EmailVerificationPage />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/twitter" element={<TwitterPlaceholder/>}/>
         {/* {isUserSignedIn && <Route path="/account" element={<Account />} />} */}
         <Route
         path="/account"
         element={isUserSignedIn ? <Account /> : <Navigate to="/login" />}
       />
+      <Route
+        path="/dashboard"
+        element={isUserSignedIn ? <Dashboard/>: <Navigate to="/login" />}
+      />
+      <Route
+        path="/dashboard2"
+        element={isUserSignedIn ? <Dashboard2/>: <Navigate to="/login" />}
+      />
+      <Route
+        path="/mycrops"
+        element={isUserSignedIn ? <MyCrops/>: <Navigate to="/login" />}
+      />
+      <Route
+        path="/finance"
+        element={isUserSignedIn ? <FinancialManagement /> : <Navigate to="/login" />}
+      />
         <Route path="/forgot" element={<Forgot />} />
+        
         <Route path="*" element={<Default />} />
       </Routes>
+      <footer>
+        <Footer/>
+      </footer>
+      
       </BrowserRouter>
     </div>
   );
