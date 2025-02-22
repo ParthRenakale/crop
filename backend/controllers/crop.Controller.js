@@ -1,13 +1,17 @@
 import Crop from "../models/crop.model.js";
+import jwt from "jsonwebtoken";
 import { ApiError, ApiResponse } from "../utils/api.js";
 // Create Crop
+// 
 export const createCrop = async (req, res, next) => {
   try {
-    // Destructure only the allowed fields from req.body.
-    // Any environment data provided by the client will be ignored.
+    // Extract token from query parameters
+    const { token } = req.query;
+    // Verify and decode token using the secret key
+    const decoded = jwt.verify(token, process.env.SECRET_KEY);
+    // Extract allowed fields from request body
     const {
       name,
-      userId,
       plantingDate,
       harvestDate,
       season,
@@ -17,6 +21,10 @@ export const createCrop = async (req, res, next) => {
       soilType,
     } = req.body;
 
+    // Use decoded user ID from the token
+    const userId = decoded.id;
+
+    // Create a new Crop document
     const crop = new Crop({
       name,
       userId,
@@ -27,7 +35,7 @@ export const createCrop = async (req, res, next) => {
       area,
       expectedYield,
       soilType,
-      // Note: The "environment" field is not set here because its data is hardcoded in the DB schema.
+      // "environment" is not set as its data is hardcoded in the schema.
     });
 
     await crop.save();
@@ -60,8 +68,12 @@ export const getCrops = async (req, res, next) => {
 export const getCropById = async (req, res, next) => {
   try {
     // const { id } = req.params;
-    const { userId } = req.query; // Get userId from query parameters
-
+     // Extract token from query parameters
+     const { token } = req.query;
+     // Verify and decode token using the secret key
+     const decoded = jwt.verify(token, process.env.SECRET_KEY);
+     // Extract allowed fields from request body
+     const userId = decoded.id;
     if (!userId) {
       return next(
         new ApiError(400, "User ID is required", [
@@ -70,7 +82,7 @@ export const getCropById = async (req, res, next) => {
       );
     }
 
-    const crop = await Crop.findOne({ userId: userId });
+    const crop = await Crop.find({ userId});
     if (!crop) {
       return next(
         new ApiError(404, "Crop not found", [

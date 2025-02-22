@@ -89,7 +89,7 @@ const Footer = () => {
             <ul className="mt-[10px] space-y-[10px]">
               <li>
                 <Link
-                  to="/property-listing?residential=PG"
+                  to="/faqs"
                   className="hover:text-gray-400 block lg:inline text-[16px]"
                 >
                   FAQs
@@ -97,7 +97,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/property-listing?residential=Flat,House"
+                  to="/aboutus"
                   className="hover:text-gray-400 block lg:inline text-[16px]"
                 >
                   About us

@@ -16,6 +16,8 @@ import MyCrops from "./pages/MyCrops";
 import Footer from "./components/Footer";
 import TwitterPlaceholder from "./components/Twitter";
 import FinancialManagement from "./pages/Finance";
+import FAQs from "./pages/Faq";
+import AboutUs from "./pages/AboutUs";
 
 function App() {
  
@@ -32,6 +34,8 @@ function App() {
         <Route path="/verify-email" element={<EmailVerificationPage />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/twitter" element={<TwitterPlaceholder/>}/>
+        <Route path="/faqs" element={<FAQs/>}/>
+        <Route path="/aboutus" element={<AboutUs/>}/>
         {/* {isUserSignedIn && <Route path="/account" element={<Account />} />} */}
         <Route
         path="/account"
