@@ -14,6 +14,7 @@ import {
   getCrops,
   updateCropProgress,
 } from "../controllers/crop.Controller.js";
+import { createTransaction, getAllTransactions } from "../controllers/transaction.Controller.js";
 
 const router = express.Router();
 router.post("/signup", signup);
@@ -27,4 +28,6 @@ router.get("/getCropById", getCropById);
 router.delete("/deleteCrop/:id", deleteCrop);
 router.put("/crops/:cropId/progress", updateCropProgress);
 router.get("/crops/:cropId/progress", getCropProgress);
+router.post('/createTransaction', createTransaction);
+router.get('/getAllTransactions', getAllTransactions);
 export default router;
