@@ -15,6 +15,7 @@ import {
   updateCropProgress,
 } from "../controllers/crop.Controller.js";
 import { createTransaction, getAllTransactions } from "../controllers/transaction.Controller.js";
+import { getDashboardData } from "../controllers/dashboard.Controller.js";
 
 const router = express.Router();
 router.post("/signup", signup);
@@ -30,4 +31,6 @@ router.put("/crops/:cropId/progress", updateCropProgress);
 router.get("/crops/:cropId/progress", getCropProgress);
 router.post('/createTransaction', createTransaction);
 router.get('/getAllTransactions', getAllTransactions);
+router.get("/dashboard", getDashboardData);
+
 export default router;

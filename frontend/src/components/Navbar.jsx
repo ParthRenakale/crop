@@ -52,7 +52,7 @@ const Navbar = () => {
             className={({ isActive }) =>
               isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400 text-black" : "hover:bg-teal-500 px-2 py-1 rounded"
             }>
-              Dashboard2
+              Add Crop
             </NavLink>
           )
         }</li>

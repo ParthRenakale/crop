@@ -545,13 +545,13 @@ function MyCrops() {
               {/* Progress Button: Navigate using the crop's _id */}
               <button
                 onClick={() => navigate(`/crops/${crop._id}/progress`)}
-                className="absolute bottom-[15px] right-4 bg-green-500 text-white px-3 py-1 rounded hover:bg-red-600 transition"
+                className="absolute right-4 bottom-15 bg-green-500 text-white px-3 py-1 rounded hover:bg-red-600 transition"
               >
                 Progress
               </button>
               <button
                 onClick={() => handleDelete(crop._id)}
-                className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition"
+                className="absolute bottom-[15px] right-4 bg-red-500 text-white px-5 py-1 rounded hover:bg-red-600 transition"
               >
                 Delete
               </button>
