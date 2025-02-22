@@ -114,3 +114,62 @@ export const deleteCrop = async (req, res, next) => {
     );
   }
 };
+
+export const updateCropProgress = async (req, res, next) => {
+  try {
+    const { cropId } = req.params;
+    const { progress } = req.body;
+
+    // Validate that progress is an array with 7 boolean values.
+    if (!Array.isArray(progress) || progress.length !== 7) {
+      return next(
+        new ApiError(400, "Invalid progress data", [
+          "Progress must be an array of 7 boolean values.",
+        ])
+      );
+    }
+
+    const updatedCrop = await Crop.findByIdAndUpdate(
+      cropId,
+      { progress },
+      { new: true }
+    );
+
+    if (!updatedCrop) {
+      return next(
+        new ApiError(404, "Crop not found", ["No crop found with this ID"])
+      );
+    }
+
+    return res
+      .status(200)
+      .json(new ApiResponse(200, { message: "Progress updated", data: updatedCrop }));
+  } catch (error) {
+    return next(
+      new ApiError(500, "Error updating crop progress", [error.message])
+    );
+  }
+};
+
+export const getCropProgress = async (req, res) => {
+  try {
+    const crop = await Crop.findById(req.params.cropId);
+    
+    if (!crop) {
+      return res.status(404).json({ error: 'Crop not found' });
+    }
+    
+    res.status(200).json({
+      success: true,
+      data: {
+        progress: crop.progress || []
+      }
+    });
+  } catch (error) {
+    console.error('Error fetching crop progress:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Server error'
+    });
+  }
+};

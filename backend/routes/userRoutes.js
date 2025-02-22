@@ -10,7 +10,9 @@ import {
   createCrop,
   deleteCrop,
   getCropById,
+  getCropProgress,
   getCrops,
+  updateCropProgress,
 } from "../controllers/crop.Controller.js";
 
 const router = express.Router();
@@ -23,5 +25,6 @@ router.post("/createCrop", createCrop);
 router.get("/getCrops", getCrops);
 router.get("/getCropById", getCropById);
 router.delete("/deleteCrop/:id", deleteCrop);
-
+router.put("/crops/:cropId/progress", updateCropProgress);
+router.get("/crops/:cropId/progress", getCropProgress);
 export default router;

@@ -27,7 +27,7 @@ const Navbar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400" : "hover:bg-teal-500 px-2 py-1 rounded"
+              isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400 text-black" : "hover:bg-teal-500 px-2 py-1 rounded"
             }
           >
             Home
@@ -39,7 +39,7 @@ const Navbar = () => {
             <NavLink
             to="/dashboard"
             className={({ isActive }) =>
-              isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400" : "hover:bg-teal-500 px-2 py-1 rounded"
+              isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400 text-black" : "hover:bg-teal-500 px-2 py-1 rounded"
             }>
               Dashboard
             </NavLink>
@@ -50,7 +50,7 @@ const Navbar = () => {
             <NavLink
             to="/dashboard2"
             className={({ isActive }) =>
-              isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400" : "hover:bg-teal-500 px-2 py-1 rounded"
+              isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400 text-black" : "hover:bg-teal-500 px-2 py-1 rounded"
             }>
               Dashboard2
             </NavLink>
@@ -61,7 +61,7 @@ const Navbar = () => {
             <NavLink
             to="/mycrops"
             className={({ isActive }) =>
-              isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400" : "hover:bg-teal-500 px-2 py-1 rounded"
+              isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400 text-black" : "hover:bg-teal-500 px-2 py-1 rounded"
             }>
               My Crops
             </NavLink>
@@ -72,18 +72,29 @@ const Navbar = () => {
             <NavLink
             to="/finance"
             className={({ isActive }) =>
-              isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400" : "hover:bg-teal-500 px-2 py-1 rounded"
+              isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400 text-black" : "hover:bg-teal-500 px-2 py-1 rounded"
             }>
               Finance
             </NavLink>
           )
         }</li>
+        {/* <li>{
+          isUserSignedIn && (
+            <NavLink
+            to="/progress"
+            className={({ isActive }) =>
+              isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400 text-black" : "hover:bg-teal-500 px-2 py-1 rounded"
+            }>
+              Progress
+            </NavLink>
+          )
+        }</li> */}
         {!isUserSignedIn ? (
           <li>
             <NavLink
               to="/login"
               className={({ isActive }) =>
-                isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400" : "hover:bg-teal-500 px-2 py-1 rounded"
+                isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400 text-black" : "hover:bg-teal-500 px-2 py-1 rounded"
               }
             >
               Login

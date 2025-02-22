@@ -74,6 +74,11 @@ const cropSchema = new mongoose.Schema(
         type: Date,
         default: null,
       },
+
+    },
+    progress: {
+      type: [Boolean],
+      default: [false, false, false, false, false, false, false],
     },
   },
   { timestamps: true }

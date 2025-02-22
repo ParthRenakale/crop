@@ -18,6 +18,8 @@ import TwitterPlaceholder from "./components/Twitter";
 import FinancialManagement from "./pages/Finance";
 import FAQs from "./pages/Faq";
 import AboutUs from "./pages/AboutUs";
+import Progress from "./pages/Progress";
+import CropGrowthTracker from "./pages/Progress";
 
 function App() {
  
@@ -56,6 +58,10 @@ function App() {
       <Route
         path="/finance"
         element={isUserSignedIn ? <FinancialManagement /> : <Navigate to="/login" />}
+      />
+      <Route
+        path={`crops/:cropId/progress`}
+        element={isUserSignedIn ? <CropGrowthTracker /> : <Navigate to="/login" />}
       />
         <Route path="/forgot" element={<Forgot />} />
         
