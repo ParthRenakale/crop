@@ -78,6 +78,17 @@ const Navbar = () => {
             </NavLink>
           )
         }</li>
+        <li>{
+          isUserSignedIn && (
+            <NavLink
+            to="/loan"
+            className={({ isActive }) =>
+              isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400 text-black" : "hover:bg-teal-500 px-2 py-1 rounded"
+            }>
+              Loan Suggestion
+            </NavLink>
+          )
+        }</li>
         {/* <li>{
           isUserSignedIn && (
             <NavLink

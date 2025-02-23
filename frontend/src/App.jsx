@@ -20,6 +20,7 @@ import FAQs from "./pages/Faq";
 import AboutUs from "./pages/AboutUs";
 import Progress from "./pages/Progress";
 import CropGrowthTracker from "./pages/Progress";
+import LoanSuggestion from "./pages/LoanSuggestion";
 
 function App() {
  
@@ -44,7 +45,7 @@ function App() {
         element={isUserSignedIn ? <Account /> : <Navigate to="/login" />}
       />
       <Route
-        path="/dashboard"
+        path="/dashboard/:cropId"
         element={isUserSignedIn ? <Dashboard/>: <Navigate to="/login" />}
       />
       <Route
@@ -62,6 +63,10 @@ function App() {
       <Route
         path={`crops/:cropId/progress`}
         element={isUserSignedIn ? <CropGrowthTracker /> : <Navigate to="/login" />}
+      />
+      <Route
+        path={`/loan`}
+        element={isUserSignedIn ? <LoanSuggestion/> : <Navigate to="/login" />}
       />
         <Route path="/forgot" element={<Forgot />} />
         

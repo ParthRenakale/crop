@@ -485,6 +485,7 @@ function MyCrops() {
                 <img
                   src={dummyCropData[crop.name]?.image || "./image.png"}
                   alt={crop.name}
+                  onClick={() => navigate(`/dashboard/${crop._id}`)}
                   className="w-full h-40 object-cover rounded-md mb-4"
                 />
               )}
