@@ -22,6 +22,7 @@ import Progress from "./pages/Progress";
 import CropGrowthTracker from "./pages/Progress";
 import LoanSuggestion from "./pages/LoanSuggestion";
 import Expert from "./pages/Expert";
+import Educate from "./pages/Educate";
 
 function App() {
  
@@ -77,7 +78,9 @@ function App() {
         <Route path="/forgot" element={<Forgot />} />
         
         <Route path="*" element={<Default />} />
+        <Route path="/educate" element={isUserSignedIn ? <Educate /> : <Navigate to="/login" />}></Route>
       </Routes>
+   
       <footer>
         <Footer/>
       </footer>

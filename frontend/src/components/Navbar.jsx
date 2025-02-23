@@ -17,7 +17,7 @@ const Navbar = () => {
     <nav className="bg-black border-b border-gray-800 flex justify-between items-center text-white">
       <NavLink to="/">
         <div className="logo">
-          <img src="./WT.png" alt="To-Let Logo" className="h-20" /> 
+          <img src={"./Agri-smart.png"} alt="To-Let Logo" className="h-20 w-20 pl-4" /> 
           
         </div>
       </NavLink>
@@ -97,6 +97,18 @@ const Navbar = () => {
               isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400 text-black" : "hover:bg-teal-500 px-2 py-1 rounded"
             }>
               Expert 
+            </NavLink>
+          )
+        }</li>
+
+<li>{
+          isUserSignedIn && (
+            <NavLink
+            to="/educate"
+            className={({ isActive }) =>
+              isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400 text-black" : "hover:bg-teal-500 px-2 py-1 rounded"
+            }>
+              Educate 
             </NavLink>
           )
         }</li>
