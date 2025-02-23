@@ -4,7 +4,7 @@ const loanSchemes = [
   { schemeName: "Basic Loan", revenueLimit: 50000, interestRate: 10.5 },
   { schemeName: "Standard Loan", revenueLimit: 100000, interestRate: 8.75 },
   { schemeName: "Premium Loan", revenueLimit: 150000, interestRate: 7.5 },
-  { schemeName: "Elite Loan", revenueLimit: 200000, interestRate: 6.0 },
+  { schemeName: "Elite Loan", revenueLimit: 200000, interestRate: 8.0 },
 ];
 
 function LoanSuggestion() {

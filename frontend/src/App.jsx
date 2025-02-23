@@ -21,12 +21,14 @@ import AboutUs from "./pages/AboutUs";
 import Progress from "./pages/Progress";
 import CropGrowthTracker from "./pages/Progress";
 import LoanSuggestion from "./pages/LoanSuggestion";
+import Expert from "./pages/Expert";
 
 function App() {
  
   const isUserSignedIn = !!localStorage.getItem("token");
 
   return (
+    <>
     <div className="App">
       <BrowserRouter>
       <Navbar />
@@ -68,6 +70,10 @@ function App() {
         path={`/loan`}
         element={isUserSignedIn ? <LoanSuggestion/> : <Navigate to="/login" />}
       />
+      <Route
+        path={`/expert`}
+        element={isUserSignedIn ? <Expert/> : <Navigate to="/login" />}
+      />
         <Route path="/forgot" element={<Forgot />} />
         
         <Route path="*" element={<Default />} />
@@ -78,6 +84,7 @@ function App() {
       
       </BrowserRouter>
     </div>
+      </>
   );
 }
 

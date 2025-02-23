@@ -16,6 +16,7 @@ import {
 } from "../controllers/crop.Controller.js";
 import { createTransaction, getAllTransactions, getAmount } from "../controllers/transaction.Controller.js";
 import { getDashboardData } from "../controllers/dashboard.Controller.js";
+import { getWeather } from "../controllers/weatherController.js";
 
 const router = express.Router();
 router.post("/signup", signup);
@@ -33,4 +34,5 @@ router.post('/createTransaction', createTransaction);
 router.get('/getAllTransactions', getAllTransactions);
 router.get("/dashboard/:cropId", getDashboardData);
 router.get("/getAmount",getAmount);
+router.get("/weather/:city",getWeather);
 export default router;

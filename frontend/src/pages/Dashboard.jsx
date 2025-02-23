@@ -6,6 +6,7 @@ import { CircularProgressbar } from "react-circular-progressbar";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement } from "chart.js";
 import axios from "axios";
 import "react-circular-progressbar/dist/styles.css";
+import WeatherWidget from "../components/weather";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement);
 
@@ -95,7 +96,7 @@ const Dashboard = () => {
           {dashboardData?.crop?.name || "No crop name available"}
         </h1>
       </div>
-
+      <WeatherWidget/>
       {/* Crop Details */}
       <div className="grid grid-cols-2  gap-4 text-gray-700 text-lg mb-6" >
         <div className="p-4 bg-gray-100 rounded-lg text-center text-2xl" style={{ boxShadow: "0 4px 6px -1px rgba(59,130,246,0.5)" }}>
