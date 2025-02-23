@@ -474,7 +474,7 @@ function MyCrops() {
       {crops.length === 0 ? (
         <p className="text-gray-500 h-screen">No crops found.</p>
       ) : (
-        <div className="flex flex-row flex-wrap gap-6 m-auto ml-[50px]">
+        <div className="flex flex-row flex-wrap gap-14 m-auto ml-[150px]">
           {crops.map((crop) => (
             <div
               key={crop._id}

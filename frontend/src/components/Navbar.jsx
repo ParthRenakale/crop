@@ -17,7 +17,7 @@ const Navbar = () => {
     <nav className="bg-black border-b border-gray-800 flex justify-between items-center text-white">
       <NavLink to="/">
         <div className="logo">
-          <img src={"./Agri-smart.png"} alt="To-Let Logo" className="h-20 w-20 pl-4" /> 
+          <img src={"./logo2.png"} alt="To-Let Logo" className="h-16 w-28 pl-4" /> 
           
         </div>
       </NavLink>
@@ -138,7 +138,7 @@ const Navbar = () => {
           <li>
             <button
               onClick={handleLogout}
-              className="hover:bg-teal-500 px-2 py-1 rounded bg-teal-400"
+              className="hover:bg-teal-500 px-2 py-1 rounded bg-teal-400 text-black"
             >
               Logout
             </button>

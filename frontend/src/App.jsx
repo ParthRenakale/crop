@@ -23,6 +23,8 @@ import CropGrowthTracker from "./pages/Progress";
 import LoanSuggestion from "./pages/LoanSuggestion";
 import Expert from "./pages/Expert";
 import Educate from "./pages/Educate";
+import TutorialsContent from "./pages/Educate";
+import Dashboardog from "./pages/Dashboardog";
 
 function App() {
  
@@ -52,6 +54,10 @@ function App() {
         element={isUserSignedIn ? <Dashboard/>: <Navigate to="/login" />}
       />
       <Route
+        path="/dashboardog"
+        element={isUserSignedIn ? <Dashboardog/>: <Navigate to="/login" />}
+      />
+      <Route
         path="/dashboard2"
         element={isUserSignedIn ? <Dashboard2/>: <Navigate to="/login" />}
       />
@@ -78,7 +84,7 @@ function App() {
         <Route path="/forgot" element={<Forgot />} />
         
         <Route path="*" element={<Default />} />
-        <Route path="/educate" element={isUserSignedIn ? <Educate /> : <Navigate to="/login" />}></Route>
+        <Route path="/educate" element={isUserSignedIn ? <TutorialsContent/> : <Navigate to="/login" />}></Route>
       </Routes>
    
       <footer>

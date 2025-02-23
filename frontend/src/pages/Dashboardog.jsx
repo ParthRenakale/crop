@@ -1,10 +1,10 @@
 import React from 'react'
 import WeatherWidget from '../components/weather'
 
-function Default() {
+function Dashboardog() {
   return (
-    <>
-    <div className='h-screen'>
+    
+          <div className='h-screen'>
             <div className='h-[200px]'>
 
             </div>
@@ -13,8 +13,7 @@ function Default() {
            <h3 className="text-white text-2xl text-center ">Please select a crop</h3>
           
           </div>
-    </>
   )
 }
 
-export default Default
+export default Dashboardog

@@ -34,7 +34,7 @@ function WeatherWidget() {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg">
+    <div className="max-w-lg mx-auto p-6 mb-5 bg-white rounded-lg shadow-lg">
       <h1 className="text-2xl font-bold mb-4 text-center">Weather Checker</h1>
       <form onSubmit={handleSubmit} className="mb-4">
         <input

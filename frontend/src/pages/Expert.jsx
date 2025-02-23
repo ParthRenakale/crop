@@ -5,7 +5,7 @@ const expertsData = [
     id: 1,
     name: "Dr. Aisha Khan",
     title: "Agricultural Scientist",
-    image: "https://via.placeholder.com/300x200?text=Dr.+Aisha+Khan",
+    image: "./p1.jpg",
     description:
       "Expert in sustainable farming techniques and crop yield optimization. Passionate about eco-friendly practices and innovative agricultural research.",
     phone: "+91 9876543210",
@@ -14,8 +14,8 @@ const expertsData = [
   {
     id: 2,
     name: "Mr. Raj Patel",
-    title: "Farm Management Consultant",
-    image: "https://via.placeholder.com/300x200?text=Mr.+Raj+Patel",
+    title: "Organic Farming Expert",
+    image: "./p2.jpg",
     description:
       "Provides strategic advice on farm management, financial planning, and market trends to help farmers maximize their productivity.",
     phone: "+91 9123456780",
@@ -23,9 +23,9 @@ const expertsData = [
   },
   {
     id: 3,
-    name: "Ms. Sita Rao",
+    name: "Mr. SitaRaman Rao",
     title: "Organic Farming Expert",
-    image: "https://via.placeholder.com/300x200?text=Ms.+Sita+Rao",
+    image: "./p3.webp",
     description:
       "Specializes in organic and eco-friendly farming practices, helping farmers transition to sustainable methods and improve soil health.",
     phone: "+91 9988776655",

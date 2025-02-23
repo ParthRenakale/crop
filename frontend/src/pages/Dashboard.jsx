@@ -89,10 +89,10 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="p-6 bg-blue-100 rounded-lg shadow-md w-full">
+    <div className="p-6 bg-black rounded-lg shadow-md w-full">
       {/* Header Section */}
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-3xl font-bold text-gray-800 m-auto pt-5 pb-5">
+        <h1 className="text-3xl font-bold text-white m-auto pt-5 pb-5">
           {dashboardData?.crop?.name || "No crop name available"}
         </h1>
       </div>
@@ -183,14 +183,14 @@ const Dashboard = () => {
     />
   </div>
   <div className="p-6 text-2xl pr-100">
-    <p className="text-gray-700 font-bold">
+    <p className="text-white font-bold">
       Current Profit:{" "}
       <span className="text-green-500">
         ₹{(dashboardData?.financials?.currentProfit || 0).toLocaleString()}
       </span>
       
     </p>
-    <p className="text-gray-700 font-bold">
+    <p className="text-white font-bold">
       Expected Profit:{" "}
       <span className="text-green-500">
         ₹{(dashboardData?.financials?.expectedProfit || 0).toLocaleString()}

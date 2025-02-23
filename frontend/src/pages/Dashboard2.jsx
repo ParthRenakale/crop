@@ -817,6 +817,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Line } from "react-chartjs-2";
+import { useNavigate } from 'react-router-dom';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -827,6 +828,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import WeatherWidget from "../components/weather";
+
 
 // Register Chart.js components
 ChartJS.register(
@@ -852,61 +855,62 @@ export const dummyCropData = {
     description: "Alfalfa is a high-protein forage crop.",
     optimalSoil: "Sandy",
     season: "Summer",
-    image: "./image.png",
+    image: "./alphalpha.webp",
     revenue: [80000, 95000, 110000],
   },
   Soybean: {
     description: "Soybean is used for oil and protein.",
     optimalSoil: "Loamy",
     season: "Summer",
-    image: "./image.png",
+    image: "./soybean.jpg",
     revenue: [130000, 125000, 140000],
   },
   Blueberry: {
     description: "Blueberry is a popular fruit crop.",
     optimalSoil: "Acidic",
     season: "Spring",
-    image: "./image.png",
+    image: "./blueberry.jpg",
     revenue: [70000, 85000, 80000],
   },
   Rapeseed: {
     description: "Rapeseed is used for producing canola oil.",
     optimalSoil: "Clayey",
     season: "Winter",
-    image: "./image.png",
+    image: "./rapeseed.webp",
     revenue: [90000, 95000, 92000],
   },
   Corn: {
     description: "Corn is a versatile crop used for many purposes.",
     optimalSoil: "Loamy",
     season: "Summer",
-    image: "./image.png",
+    image: "./corn.jpg",
     revenue: [150000, 155000, 160000],
   },
   Rice: {
     description: "Rice is a staple food in many parts of the world.",
     optimalSoil: "Clayey",
     season: "Monsoon",
-    image: "./image.png",
+    image: "./rice.jpg",
     revenue: [110000, 115000, 108000],
   },
   Potato: {
     description: "Potato is a versatile root vegetable.",
     optimalSoil: "Sandy",
     season: "Autumn",
-    image: "./image.png",
+    image: "./potato.jpg",
     revenue: [95000, 97000, 93000],
   },
   Beetroot: {
     description: "Beetroot is rich in nutrients and versatile in cuisine.",
     optimalSoil: "Loamy",
     season: "Autumn",
-    image: "./image.png",
+    image: "./beetroot.jpg",
     revenue: [60000, 65000, 63000],
   },
 };
 
 function Dashboard2() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     cropName: "",
     plantingDate: "",
@@ -986,6 +990,7 @@ const response = await axios.post(
     } catch (error) {
       console.error("Error creating crop:", error.response?.data || error.message);
     }
+    navigate('/mycrops');
   };
 
   // Prepare Chart.js data if dummy data is available (i.e. it contains a "description" property)
@@ -1118,7 +1123,7 @@ const response = await axios.post(
             <input
               type="number"
               name="area"
-              min="0.1"
+              // min="0.1"
               value={formData.area}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-md"
@@ -1235,7 +1240,14 @@ const response = await axios.post(
             )}
           </div>
         ) : (
-          <p className="text-gray-500">No crop selected.</p>
+          <>
+          
+          <WeatherWidget/>
+           <p className="text-white text-2xl text-center ">No crop selected.</p>
+           <h3 className="text-white text-2xl text-center ">Please select a crop</h3>
+          
+          </>
+         
         )}
       </div>
     </div>

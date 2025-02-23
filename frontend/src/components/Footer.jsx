@@ -26,7 +26,7 @@ const Footer = () => {
         <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row lg:justify-between lg:items-start">
           {/* Logo and Tagline Section */}
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left w-full lg:w-[250.67px] mb-8 lg:mb-0 ">
-            <img src={image} alt="To-Let Globe Logo" className="w-[83.93px] h-[59.45px] mb-[14.22px] m-auto" />
+            <img src="./logo2.png" alt="To-Let Globe Logo" className="w-[83.93px] h-[59.45px] mb-[14.22px] m-auto" />
             <p className="text-[14.51px] font-normal m-auto text-center">
               One-stop solution for all your <br /> agricultural problems.
             </p>

@@ -39,7 +39,7 @@ const cropSchema = new mongoose.Schema(
     },
     area: {
       type: Number,
-      min: [0.1, "Minimum 0.1 hectare/acre"],
+      // min: [0.1, "Minimum 0.1 hectare/acre"],
       required: true,
     },
     expectedYield: {

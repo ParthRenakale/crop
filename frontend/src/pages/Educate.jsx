@@ -199,7 +199,7 @@ const TutorialsContent = () => {
           {/* Replace placeholder div with image */}
           <div className="aspect-video bg-gray-900 rounded-lg mb-4 overflow-hidden">
             <img 
-              src={tutorial.image} 
+              src="./video.webp"
               alt={tutorial.title} 
               className="w-full h-full object-cover"
             />
@@ -222,3 +222,4 @@ const TutorialsContent = () => {
     </div>
   );
 };
+export default TutorialsContent;
