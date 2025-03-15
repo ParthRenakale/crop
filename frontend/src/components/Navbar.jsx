@@ -131,7 +131,7 @@ const Navbar = () => {
                 isActive ? "hover:bg-teal-500 px-2 py-1 rounded bg-teal-400 text-black" : "hover:bg-teal-500 px-2 py-1 rounded"
               }
             >
-              Login/Signin
+              Login
             </NavLink>
           </li>
         ) : (
